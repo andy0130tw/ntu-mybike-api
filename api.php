@@ -123,7 +123,8 @@ function main(){
 	global $list,$info;
 	$isEmpty=false;
 	$result=execCurl();
-	if(preg_match("/查無拖吊紀錄/",$result)===1){
+	//if try to redirect
+	if(preg_match("/location.href=/",$result)===1){
 		$isEmpty=true;
 	}else{
 		processRecords($result);
